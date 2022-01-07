@@ -1,0 +1,48 @@
+<%- include('partials/head') %>
+
+    <body>
+        <div class="container">
+            <%- include('partials/navbar') %>
+                <h2 style="margin: 50px 0; text-align: center;">Products currently available:</h2>
+
+                <table class="table table-dark table-striped table-responsive mx-auto" style="width: 60%;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product name</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <% for(let p of products){ %>
+                            <tr>
+                                <td>
+                                    <%= p.name %>
+                                </td>
+                                <td>
+                                    <button class="btn btn-info btn-sm"><a href="/products/<%= p._id %>"
+                                            style="text-decoration: none; color: black;">View
+                                            details</a>
+
+                                    </button>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <button class="btn btn-success btn-lg" style="min-width: 200px;">
+                        <a href="/products/new" style="text-decoration: none;color: white;">Add product</a>
+                    </button>
+                </div>
+
+        </div>
+
+
+
+        <%- include('partials/footer') %>
+
+    </body>
+
+    </html>
