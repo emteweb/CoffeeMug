@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 const productSchema = Schema({
     name: {
         type: String,
-        required: Boolean,
+        required: true,
         maxlength: 100,
     },
     price: {
         type: Number,
-        required: Boolean,
+        required: true,
         min: 0
     },
     updateDate: {
